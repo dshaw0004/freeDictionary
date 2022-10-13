@@ -1,0 +1,53 @@
+#search-area {
+	background-color: rgb(247 248 250);
+	overflow: hidden;
+
+	.box {
+		height: 2.5rem;
+		width: 80%;
+		// outline: 1px double #7e7e7e;
+		#input {
+			height: 100%;
+			width: 90%;
+		}
+		#btn2 {
+			font-weight: 100;
+			height: 100%;
+			width: 10%;
+			font-size: 1.5rem;
+		}
+	}
+	#btn1 {
+		width: 20%;
+	}
+}
+
+#area {
+	// outline: 2px solid antiquewhite;
+
+	#word {
+		color: transparent;
+		font-size: 2.5em;
+		margin: 0 0 4% 5%;
+		padding-bottom: 1%;
+		width: fit-content;
+		background-image: linear-gradient(45deg, red, orange, purple, blue);
+		background-clip: text;
+		position: relative;
+		&::after {
+			content: " ";
+			position: absolute;
+			inset: 102% 0 -9% 0;
+			background-image: linear-gradient(45deg, red, orange, purple, blue);
+		}
+	}
+	.subarea {
+		width: 90%;
+		margin: 0.5em auto;
+		box-shadow: inset 0 0 5px 2px #c7c7e7;
+		padding: 1ch;
+		& > p {
+			margin-left: 4ch;
+		}
+	}
+}
