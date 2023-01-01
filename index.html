@@ -16,6 +16,11 @@
 			integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
 			crossorigin="anonymous"
 		/>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+		/>
 		<link
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet"
@@ -25,8 +30,8 @@
 	</head>
 
 	<body>
-		<header>
-			<nav class="navbar navbar-expand-lg bg-light">
+		<header class="row align-items-center">
+			<nav class="navbar navbar-expand-md bg-light col-12 col-lg-6">
 				<div class="container-fluid">
 					<button
 						class="navbar-toggler"
@@ -46,11 +51,14 @@
 							<li class="nav-item">
 								<a class="nav-link active" aria-current="page" href="#">Home</a>
 							</li>
-							<li class="nav-item">
+							<!-- <li class="nav-item">
 								<a class="nav-link" href="#">About</a>
-							</li>
+							</li> -->
 							<li class="nav-item">
-								<a href="https://github.com/dshaw0004" class="nav-link"
+								<a
+									href="https://github.com/dshaw0004/freeDictionary"
+									class="nav-link"
+									target="_blank"
 									>Github</a
 								>
 							</li>
@@ -58,122 +66,42 @@
 					</div>
 				</div>
 			</nav>
-		</header>
-		<main>
 			<form
-				class="container-fluid mx-auto py-2 row justify-content-around"
+				class="col-12 col-lg-6 row justify-content-end my-2 my-lg-0"
 				id="search-area"
 			>
-				<div class="box row items-center">
+				<div class="box row align-items-center col-10 col-md-11">
 					<input
 						id="input"
-						class=""
+						class="col-11"
 						placeholder="Enter your word"
 						name="input"
+						accesskey="i"
 					/>
-					<input type="reset" id="btn2" onClick="clear()" class="" value="X" />
+					<input
+						type="reset"
+						id="btn2"
+						onClick="clear()"
+						class="col-1"
+						value="X"
+						accesskey="c"
+					/>
 				</div>
-				<input
+				<span
+					class="col-2 col-md-1 text-center"
 					type="button"
-					class=""
 					id="btn1"
 					onClick="log()"
-					value="Search"
-				/>
-			</form>
-			<div id="area">
-				<h2 id="word">good</h2>
-				<audio id="myAudio">
-					<!-- <source src="" type="audio/ogg" /> -->
-					<source
-						src="https://api.dictionaryapi.dev/media/pronunciations/en/good-us.mp3"
-						type="audio/mpeg"
-						id="audioSource"
-					/>
-					Your browser does not support the audio element.
-				</audio>
-				<!-- <i class="material-icons" id="voice" style="font-size: 2.5em" -->
-					>volume_up</i
 				>
-				<div class="subarea">
-					<h4>adjective</h4>
-					<ul class="ul">
-						<li>(of people)</li>
-						<li>(of capabilities)</li>
-						<li>(properties and qualities)</li>
-						<li>(when with and) Very, extremely. See good and.</li>
-						<li>Holy (especially when capitalized) .</li>
-						<li>(of quantities)</li>
-						<li>
-							That is good; an elliptical exclamation of satisfaction or
-							commendation.
-						</li>
-					</ul>
-					<h5>synonyms</h5>
-					<p>accomplished</p>
-					<p>all right</p>
-					<p>decent</p>
-					<p>not bad</p>
-					<p>satisfactory</p>
-					<p>well</p>
-					<h5>antonyms</h5>
-					<p>bad</p>
-					<p>evil</p>
-					<p>bad</p>
-					<p>poor</p>
-					<h4>interjection</h4>
-					<ul class="ul">
-						<li>
-							That is good; an elliptical exclamation of satisfaction or
-							commendation.
-						</li>
-					</ul>
-				</div>
-				<div class="subarea">
-					<h4>adverb</h4>
-					<ul class="ul">
-						<li>Well; satisfactorily or thoroughly.</li>
-					</ul>
-				</div>
-				<div class="subarea">
-					<h4>noun</h4>
-					<ul class="ul">
-						<li>
-							The forces or behaviours that are the enemy of evil. Usually
-							consists of helping others and general benevolence.
-						</li>
-						<li>A result that is positive in the view of the speaker.</li>
-						<li>
-							The abstract instantiation of goodness; that which possesses
-							desirable qualities, promotes success, welfare, or happiness, is
-							serviceable, fit, excellent, kind, benevolent, etc.
-						</li>
-						<li>(usually in the plural) An item of merchandise.</li>
-					</ul>
-					<h5>antonyms</h5>
-					<p>bad</p>
-					<p>bad</p>
-					<p>evil</p>
-				</div>
-				<div class="subarea">
-					<h4>verb</h4>
-					<ul class="ul">
-						<li>To thrive; fatten; prosper; improve.</li>
-						<li>To make good; turn to good; improve.</li>
-						<li>To make improvements or repairs.</li>
-						<li>To benefit; gain.</li>
-						<li>To do good to (someone); benefit; cause to improve or gain.</li>
-						<li>To satisfy; indulge; gratify.</li>
-						<li>To flatter; congratulate oneself; anticipate.</li>
-					</ul>
-				</div>
-				<div class="subarea">
-					<h4>verb</h4>
-					<ul class="ul">
-						<li>
-							To furnish with dung; manure; fatten with manure; fertilise.
-						</li>
-					</ul>
+					<i class="bi bi-search"></i>
+				</span>
+			</form>
+		</header>
+		<main>
+			<div id="area">
+				<h2 id="word"></h2>
+				<div class="bookAnimation mx-auto" data-visible="true">
+					<img src="book-animation.gif" alt="" />
 				</div>
 			</div>
 		</main>
