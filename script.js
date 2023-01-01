@@ -15,49 +15,59 @@ function log() {
 		})
 		.then((data) => {
 			clrscr();
-			console.log(data);
-			$("#word").text(input);
+			// console.log(data);
 			bookAnimation.dataset.visible = "false";
-			// console.log(
-			// 	data.phonetics[0].audio !== " "
-			// 		? data.phonetics[0].audio
-			// 		: data.phonetics[1].audio
-			// );
+			if (data.title) {
+				$("#area").append('<div class="err text-center"></div>');
+				$(".err").append(
+					`<h3  class="err-title" >😔<br/>No Definitions Found</h3>`
+				);
+				$(".err").append(
+					`<p class="err-message" >Sorry pal, we couldn't find definitions for the word you were looking for.</p>`
+				);
+			} else {
+				// console.log(
+				// 	data.phonetics[0].audio !== " "
+				// 		? data.phonetics[0].audio
+				// 		: data.phonetics[1].audio
+				// );
+				$("#word").text(input);
 
-			for (let d of data) {
-				$("#area").append('<div class="subarea"></div>');
-				for (let m of d.meanings) {
-					$("#area > div:last-child").append(`<h4>${m.partOfSpeech}</h4>`);
-					$("#area > div:last-child").append('<ul class="ul"></ul>');
-					for (let ds of m.definitions) {
-						$("#area > div:last-child > .ul").append(
-							`<li>${ds.definition}</li>`
-						);
-					}
-					if (m.synonyms.length) {
-						$("#area > div:last-child > .ul").append(
-							`<ul class="synonyms"></ul>`
-						);
-						$("#area > div:last-child > .ul > .synonyms").append(
-							`<h5>synonyms</h5>`
-						);
-						for (let synonym of m.synonyms) {
-							$("#area > div:last-child > .ul > .synonyms").append(
-								`<li>${synonym}</li>`
+				for (let d of data) {
+					$("#area").append('<div class="subarea"></div>');
+					for (let m of d.meanings) {
+						$("#area > div:last-child").append(`<h4>${m.partOfSpeech}</h4>`);
+						$("#area > div:last-child").append('<ul class="ul"></ul>');
+						for (let ds of m.definitions) {
+							$("#area > div:last-child > .ul").append(
+								`<li>${ds.definition}</li>`
 							);
 						}
-					}
-					if (m.antonyms.length) {
-						$("#area > div:last-child > .ul ").append(
-							`<ul class="antonyms"></ul>`
-						);
-						$("#area > div:last-child > .ul > .antonyms").append(
-							`<h5>antonyms</h5>`
-						);
-						for (let antonym of m.antonyms) {
-							$("#area > div:last-child > .ul > .antonyms").append(
-								`<li>${antonym}</li>`
+						if (m.synonyms.length) {
+							$("#area > div:last-child > .ul").append(
+								`<ul class="synonyms"></ul>`
 							);
+							$("#area > div:last-child > .ul > .synonyms").append(
+								`<h5>synonyms</h5>`
+							);
+							for (let synonym of m.synonyms) {
+								$("#area > div:last-child > .ul > .synonyms").append(
+									`<li>${synonym}</li>`
+								);
+							}
+						}
+						if (m.antonyms.length) {
+							$("#area > div:last-child > .ul ").append(
+								`<ul class="antonyms"></ul>`
+							);
+							$("#area > div:last-child > .ul > .antonyms").append(
+								`<h5>antonyms</h5>`
+							);
+							for (let antonym of m.antonyms) {
+								$("#area > div:last-child > .ul > .antonyms").append(
+									`<li>${antonym}</li>`
+								);
+							}
 						}
 					}
 				}

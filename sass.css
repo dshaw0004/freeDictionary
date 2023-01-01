@@ -15,7 +15,7 @@ header #search-area {
 }
 header #search-area .box {
   height: var(--height);
-  background-color: rgba(171, 205, 239, 0.4117647059);
+  background-color: rgb(200, 225, 250);
   border-radius: 20px;
   max-width: 650px;
   padding: 0 8px;
@@ -23,6 +23,8 @@ header #search-area .box {
 header #search-area .box #input {
   height: 100%;
   border: 0;
+  border-radius: 20px;
+  padding-left: 1ch;
   background-color: transparent;
 }
 header #search-area .box #input:focus {
@@ -43,6 +45,7 @@ header #search-area .box #btn2:focus {
 }
 header #search-area .box:focus-within {
   outline: 1px solid #77bbff;
+  background-color: rgb(232, 240, 254);
 }
 header #search-area #btn1 {
   max-width: var(--height);
@@ -52,6 +55,9 @@ header #search-area #btn1 {
   line-height: calc(var(--height) - 10px);
 }
 
+#area {
+  position: relative;
+}
 #area #word {
   color: transparent;
   font-size: 2.5em;
@@ -107,14 +113,14 @@ header #search-area #btn1 {
 }
 
 .bookAnimation {
-  width: min(90%, 550px);
+  width: min(90%, 1550px);
   aspect-ratio: 1/1;
   opacity: 0.5;
 }
 
 .bookAnimation > img {
   width: 100%;
-  aspect-ratio: 1/1;
+  height: 50%;
 }
 
 .bookAnimation[data-visible=true] {
@@ -123,4 +129,17 @@ header #search-area #btn1 {
 
 .bookAnimation[data-visible=false] {
   display: none;
+}
+
+.err {
+  width: 90%;
+  margin: 0.5em auto;
+  box-shadow: inset 0 0 4px 0.1px rgb(96, 144, 123);
+  padding: 2ch;
+}
+.err .err-title {
+  color: rgba(128, 128, 128, 0.69);
+}
+.err .err-message {
+  color: rgba(128, 128, 128, 0.96);
 }/*# sourceMappingURL=sass.css.map */

@@ -4,7 +4,7 @@
 	margin: 0;
 }
 header {
-	background-color: rgb(247 248 250);
+	background-color: #f7f8fa;
 
 	.navbar-toggler-icon:focus {
 		border: 0;
@@ -16,7 +16,7 @@ header {
 		.box {
 			height: var(--height);
 			// width: 80%;
-			background-color: #abcdef69;
+			background-color: #c8e1fa;
 			border-radius: 20px;
 			max-width: 650px;
 			padding: 0 8px;
@@ -24,6 +24,8 @@ header {
 				height: 100%;
 				// width: 90%;
 				border: 0;
+				border-radius: 20px;
+				padding-left: 1ch;
 				background-color: transparent;
 				&:focus {
 					outline: 0;
@@ -46,6 +48,7 @@ header {
 			}
 			&:focus-within {
 				outline: 1px solid #77bbff;
+				background-color: rgb(232, 240, 254);
 			}
 		}
 		#btn1 {
@@ -61,7 +64,7 @@ header {
 }
 #area {
 	// outline: 2px solid antiquewhite;
-
+	position: relative;
 	#word {
 		color: transparent;
 		font-size: 2.5em;
@@ -114,18 +117,31 @@ header {
 	}
 }
 .bookAnimation {
-	width: min(90%, 550px);
+	width: min(90%, 1550px);
 	aspect-ratio: 1/1;
 
 	opacity: 0.5;
 }
 .bookAnimation > img {
 	width: 100%;
-	aspect-ratio: 1/1;
+	height: 50%;
 }
 .bookAnimation[data-visible="true"] {
 	display: block;
 }
 .bookAnimation[data-visible="false"] {
 	display: none;
+}
+
+.err {
+	width: 90%;
+	margin: 0.5em auto;
+	box-shadow: inset 0 0 4px 0.1px rgb(96, 144, 123);
+	padding: 2ch;
+	.err-title {
+		color: rgb(128, 128, 128, 0.69);
+	}
+	.err-message {
+		color: rgb(128, 128, 128, 0.96);
+	}
 }
