@@ -5,7 +5,7 @@
 }
 
 header {
-  background-color: rgb(247, 248, 250);
+  background-color: #f7f8fa;
 }
 header .navbar-toggler-icon:focus {
   border: 0;
@@ -15,7 +15,7 @@ header #search-area {
 }
 header #search-area .box {
   height: var(--height);
-  background-color: rgb(200, 225, 250);
+  background-color: #c8e1fa;
   border-radius: 20px;
   max-width: 650px;
   padding: 0 8px;
@@ -27,7 +27,7 @@ header #search-area .box #input {
   padding-left: 1ch;
   background-color: transparent;
 }
-header #search-area .box #input:focus {
+header #search-area .box #input:focus, header #search-area .box #input:focus-visible {
   outline: 0;
   background-color: transparent;
 }

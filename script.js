@@ -84,7 +84,7 @@ reset.addEventListener("click", clrscr);
 
 function clrscr() {
 	bookAnimation.dataset.visible = "true";
-
+	$(".err").remove();
 	$(".subarea").remove();
 	$("#word").text("");
 }

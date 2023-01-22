@@ -1,0 +1,22 @@
+{
+  "name": "freedictionary",
+  "version": "2.0.0",
+  "description": "free english dictionary",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dshaw0004/freeDictionary.git"
+  },
+  "keywords": [
+    "freeDictionary"
+  ],
+  "author": "dshawoo04",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dshaw0004/freeDictionary/issues"
+  },
+  "homepage": "https://github.com/dshaw0004/freeDictionary#readme"
+}

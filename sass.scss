@@ -27,7 +27,8 @@ header {
 				border-radius: 20px;
 				padding-left: 1ch;
 				background-color: transparent;
-				&:focus {
+				&:focus,
+				&:focus-visible {
 					outline: 0;
 					background-color: transparent;
 				}
